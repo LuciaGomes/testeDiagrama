@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="testeDiag">
+    <output-path>$PROJECT_DIR$/out/artifacts/testeDiag</output-path>
+    <root id="archive" name="testeDiag.jar">
+      <element id="module-output" name="testeDiagrama" />
+      <element id="file-copy" path="$PROJECT_DIR$/resources/_compraLivro.pdf" />
+    </root>
+  </artifact>
+</component>
