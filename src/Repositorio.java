@@ -1,76 +1,31 @@
-import java.util.ArrayList;
-
-public class Repositorio {
-
-    private ArrayList<Emprestimo> mEmprestimo;
-    private ArrayList<Utilizador> mUtilizador;
-    private ArrayList<TipoUtilizador> mTipoUtilizador;
-    private ArrayList<Requisicao> mRequisicao;
-    private ArrayList<Copia> mCopia;
-    private ArrayList<Livro> mLivro;
-    private ArrayList<Encomenda> mEncomenda;
-    private ArrayList<RequisicaoCompra> mRequisicaoCompra;
+public interface Repositorio {
 
 
-    public Repositorio() {
-        mEmprestimo = new ArrayList<>();
-        mUtilizador = new ArrayList<>();
-        mTipoUtilizador = new ArrayList<>();
-        mRequisicao = new ArrayList<>();
-        mCopia = new ArrayList<>();
-        mLivro = new ArrayList<>();
-        mEncomenda = new ArrayList<>();
-        mRequisicaoCompra = new ArrayList<>();
-    }
+    void adicionaCopia(Copia copia);
 
-    public void adicionaCopia(Copia copia) {
-        mCopia.add(copia);
-    }
+    void adicionaCoima(Coima coima);
 
-    public void adicionaCoima(Coima coima) { }
+    void adicionaDevolucao(Devolucao devolucao);
 
-    public void adicionaDevolucao(Devolucao devolucao) { }
+    void adicionaEmprestimo(Emprestimo emprestimo);
 
-    public void adicionaEmprestimo(Emprestimo emprestimo) {
-        mEmprestimo.add(emprestimo);
-    }
+    void adicionaEncomenda(Encomenda encomenda);
 
-    public void adicionaEncomenda(Encomenda encomenda) { mEncomenda.add(encomenda); }
+    void adicionaEntradaNovoLivro(EntradaNovoLivro entradaNovoLivro);
 
-    public void adicionaEntradaNovoLivro(EntradaNovoLivro entradaNovoLivro) { }
+    void adicionaLivro(Livro livro);
 
-    public void adicionaLivro(Livro livro) {
-        mLivro.add(livro);
-    }
+    void adicionaNotificacao(Notificacao notificacao);
 
-    public void adicionaNotificacao(Notificacao notificacao) { }
+    void adicionaPropostaRequisicao(PropostaAquisicao proposta);
 
-    public void adicionaPropostaRequisicao(PropostaAquisicao proposta) { }
+    void adicionaRequisicao(Requisicao requisicao);
 
-    public void adicionaRequisicao(Requisicao requisicao) {
-        mRequisicao.add(requisicao);
-    }
+    void adicionaRequisicaoCompra(RequisicaoCompra requisicaoCompra);
 
-    public void adicionaRequisicaoCompra(RequisicaoCompra requisicaoCompra) { mRequisicaoCompra.add(requisicaoCompra); }
+    void adicionaTipoUtilizador(TipoUtilizador tipo);
 
-    public void adicionaTipoUtilizador(TipoUtilizador tipo) {
-        mTipoUtilizador.add(tipo);
-    }
+    void adicionaUtilizador(Utilizador utilizador);
 
-    public void adicionaUtilizador(Utilizador utilizador) {
-        mUtilizador.add(utilizador);
-    }
-
-
-    public Emprestimo devolveEmprestimoDaRequisicao(Requisicao r) {
-
-        int tamanho = mEmprestimo.size();
-        for (int i = 0; i < tamanho; i++) {
-            if (mEmprestimo.get(i).getRequisicao().equals(r)) {
-                return mEmprestimo.get(i);
-            }
-        }
-
-        return null;
-    }
+    Emprestimo devolveEmprestimoDaRequisicao(Requisicao r);
 }
